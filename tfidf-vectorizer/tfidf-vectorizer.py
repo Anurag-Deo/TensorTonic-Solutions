@@ -34,7 +34,7 @@ def tfidf_vectorizer(documents):
         doc_len = len(tokens)
 
         for j, term in enumerate(vocab):
-            term_tf = tf[term] / doc_len  # normalized term frequency
+            term_tf = tf[term] / doc_len 
             tfidf_matrix[i, j] = term_tf * idf[term]
     
     return tfidf_matrix, vocab
