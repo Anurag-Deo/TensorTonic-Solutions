@@ -66,7 +66,6 @@ def encoder_block(x: np.ndarray, W_q: np.ndarray, W_k: np.ndarray, W_v: np.ndarr
     Complete encoder block: MHA + FFN with residuals and layer norms.
     """
     # Your code here
-    Q,K,V = x@W_q, x@W_k, x@W_v
     mha = multi_head_attention(x,x,x, W_q, W_k, W_v, W_o, num_heads)
     y = layer_norm(x+mha, gamma1, beta1)
     ff = feed_forward(y, W1, b1, W2, b2)
